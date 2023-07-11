@@ -1,0 +1,30 @@
+<header class="d-flex justify-content-between flex-row">
+    <div id="logo">
+        <img src="/assets/Exchange-logo.png" alt="logo"/>
+        <h4>Exchange</h4>
+    </div>
+    <ul class="currency-ul d-flex flex-row">
+        <li class="currency-li d-flex flex-row">
+            <span class="currency-type">
+                {{USD?.value}}
+                {{USD?.symbol}}
+            </span>
+            <div class="currency-value d-flex flex-row">
+                <span class="bid">{{USDtoUAH?.bid || 0.0}}</span>
+                <span class="splitter">/</span>
+                <span class="ask">{{USDtoUAH?.ask || 0.0}}</span>
+            </div>
+        </li>
+        <li class="currency-li d-flex flex-row">
+            <span class="currency-type">
+                {{EUR?.value}}
+                {{EUR?.symbol}}
+            </span>
+            <div class="currency-value d-flex flex-row">
+                <span class="bid">{{EURtoUAH?.bid || 0.0}}</span>
+                <span class="splitter">/</span>
+                <span class="ask">{{EURtoUAH?.ask || 0.0}}</span>
+            </div>
+        </li>
+    </ul>
+</header>

@@ -1,0 +1,40 @@
+header {
+    margin-top: 40px;
+    align-items: center;
+    position: relative;
+    #logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+            position: relative;
+            width: 50px;
+        }
+    }
+    .currency-ul {
+        position: relative;
+        height: 100%;
+        list-style: none;
+        align-items: center;
+        .currency-li {
+            align-items: center;
+            margin-left: 10px;
+            gap: 3px;
+            .currency-type {
+                font-weight: 500;
+            }
+            .currency-value {
+                // font-size: 10pt;
+                .bid {
+                    color: #3366ff;
+                }
+                .splitter {
+                    color: gray;
+                }
+                .ask {
+                    color: #c5701b;
+                }
+            }
+        }
+    }
+}

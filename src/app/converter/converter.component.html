@@ -1,0 +1,20 @@
+<main class="d-flex flex-column">
+    <div class="converter-block d-flex flex-row justify-content-center gap-2">
+        <app-currency-input
+            [currencies] = 'currencies'
+            [active] = 'activeA'
+            [activeB] = 'activeB'
+            [amount] = 'amountA'
+            (changeData) = "changeActiveA($event)">
+        </app-currency-input>
+        <span class="equals">=</span>
+        <app-currency-input
+            [currencies] = 'currencies'
+            [active] = 'activeB'
+            [activeB] = 'activeA'
+            [amount] = 'amountB'
+            (changeData) = "changeActiveB($event)">
+        </app-currency-input>
+    </div>
+    <app-exchange-rate [exchangeRate]="exchangeRate" *ngIf="exchangeRate.base.length > 0"></app-exchange-rate>
+</main>

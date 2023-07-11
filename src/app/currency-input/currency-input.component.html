@@ -1,0 +1,19 @@
+<div class="currency-block">
+    <span class="currency-symbol">{{active?.symbol}}</span>
+    <input type="number" 
+        placeholder="Amount" 
+        min="0"
+        [value]='amount || ""'
+        (keyup)="changeAmount($event)" />
+    <select name="currency-select"
+        (input)="changeCurrency($event)">
+        <ng-container *ngFor="let currency of currencies">
+            <option 
+            [value]='currency.value' 
+            [selected]='currency.value === active?.value'
+            [disabled]='currency.value === activeB?.value'>
+                {{currency.value}}
+            </option>
+        </ng-container>
+    </select>
+</div>
