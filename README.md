@@ -7,6 +7,9 @@ TypeScript ~5.1.3
 node.js ~18.16.0
 ```
 
+## API
+For getting currency exchanged data I used API by [`OANDA Exchange Rates API`](https://developer.oanda.com/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
