@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CurrencyAndAmountChange } from '../Interfaces';
 import { Currency } from '../Interfaces';
+import { config } from 'src/assets/config';
 
 @Component({
   selector: 'app-currency-input',
@@ -15,6 +16,7 @@ export class CurrencyInputComponent {
   @Output() changeData: EventEmitter<CurrencyAndAmountChange> = new EventEmitter();
   timeout: any = null;
   currency: string | undefined;
+  delay = config.input_delay
 
   ngOnInit() {
     this.currency = this.active?.value
@@ -37,7 +39,7 @@ export class CurrencyInputComponent {
     this.timeout = setTimeout(() => {
       this.amount = amount;
       this.changeState()
-    }, 1000)
+    }, this.delay)
   }
 
   changeState() {
