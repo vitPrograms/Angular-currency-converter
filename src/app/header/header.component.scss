@@ -10,10 +10,14 @@ header {
             position: relative;
             width: 50px;
         }
+        h4 {
+            margin: 0;
+            padding: 0;
+        }
     }
     .currency-ul {
-        position: relative;
-        height: 100%;
+        padding: 0;
+        margin: 0;
         list-style: none;
         align-items: center;
         .currency-li {
