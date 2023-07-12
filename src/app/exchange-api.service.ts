@@ -9,6 +9,7 @@ export class ExchangeAPIService {
   data: ExchangeRate;
   URL = config.api
   API_KEY = config.api_key
+  DECIMALS = config.decimal_places
 
   constructor() {
     this.data = {
@@ -21,7 +22,7 @@ export class ExchangeAPIService {
   }
 
   fetchExchange(curA: string, curB: string) : Promise<ExchangeRate> {
-    const URI = `${this.URL}?api_key=${this.API_KEY}&base=${curA}&quote=${curB}`
+    const URI = `${this.URL}?api_key=${this.API_KEY}&base=${curA}&quote=${curB}&decimal_places=${this.DECIMALS}`
     return fetch(URI)
       .then((response) => response.json())
       .then((data) => {
@@ -39,9 +40,9 @@ export class ExchangeAPIService {
     this.data = {
       base: rawData?.base_currency,
       quote: rawData?.quote_currency,
-      bid:  Number(Number(rawData?.average_bid).toFixed(2)),
-      ask: Number(Number(rawData?.average_ask).toFixed(2)),
-      mid: Number(Number(rawData?.average_midpoint).toFixed(2)),
+      bid:  rawData?.average_bid,
+      ask: rawData?.average_ask,
+      mid: rawData?.average_midpoint,
     };
   }
 }
